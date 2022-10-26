@@ -1,0 +1,161 @@
+<div id="container">
+    <!-- {{registrationForm.value | json}} -->
+
+    <form [formGroup]="registrationForm"  (ngSubmit)="onSubmit()">
+        <mat-card class="shipping-card">
+            <mat-card-header>
+                <mat-card-title>Registration Form</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+
+                <div class="row">
+
+                    <div class="col1">
+                        <mat-form-field appearance="fill">
+                            <!-- <mat-label>Add Title</mat-label> -->
+                            <input matInput placeholder="First Name" formControlName="firstName">
+                            <mat-error *ngIf="firstName.hasError('required')">
+                                First Name is required!
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col1">
+                        <mat-form-field appearance="fill">
+                            <input matInput placeholder="Last Name" formControlName="lastName">
+                            <mat-error *ngIf="lastName.hasError('required') && lastName.touched">
+                                Last Name is required!
+                            </mat-error>
+                        </mat-form-field>
+
+                    </div>
+
+                </div>
+
+                <div>
+                    <mat-form-field class="row1" appearance="fill">
+                        <input  matInput placeholder="Email" formControlName="email">
+                        <mat-error *ngIf="email.hasError('required')">
+                            Email is required
+                        </mat-error>
+                        <!-- {{heyy email.hasError('invalid')}} -->
+                        <mat-error *ngIf="email.hasError('invalidEmail') && !email.hasError('required')">
+                            Enter Valid Email address
+                        </mat-error>
+
+                    </mat-form-field>
+                    {{email.hasError('invalidEmail')}}
+
+                </div>
+                <div class="row">
+                    <div class="col1">
+                        <mat-form-field appearance="fill">
+                            <input type="password" matInput placeholder="Password" formControlName="password">
+                            <mat-error *ngIf="password.hasError('required')">
+                                Last name is required
+                            </mat-error>
+                            <mat-error *ngIf="password.hasError('invalidPassword') && !password.hasError('required')">
+                                Password should have min 8 letter password, with at least a symbol, upper and lower case letters and a number
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col1">
+                        <mat-form-field appearance="fill">
+                            <input type="password" matInput placeholder="Confirm Password"
+                                formControlName="confirmPassword">
+                            <mat-error *ngIf="confirmPassword.hasError('required')">
+                                Confirm Password is required
+                            </mat-error>
+                            
+                            
+                        </mat-form-field>
+                        
+                    </div>
+                    <small *ngIf="registrationForm.hasError('passwordMisMatch') && confirmPassword.touched && password.valid">
+                        Password and Confirm Password should be the same
+                    </small>
+                    
+                </div>
+                <div class="row1 my-3">
+                    <mat-radio-group id="radioContainer" formControlName="gender">
+                        <label class="radio">Gender</label>
+                        <mat-radio-button class="radio" value="Male">Male</mat-radio-button>
+                        <mat-radio-button class="radio" value="Female">Female</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="row">
+                    <div class="col1">
+                        <mat-form-field appearance="fill">
+                            <input type="number" matInput placeholder="Age" formControlName="age">
+                            <mat-error *ngIf="age.hasError('required')">
+                                Age is required
+                            </mat-error>
+                        </mat-form-field>
+                        <small *ngIf="age.hasError('ageValidation') && age.touched && !age.hasError('required')">
+                            Age must be 18 years and above
+                        </small>
+                    </div>
+                    <div class="col1">
+                        <mat-form-field appearance="fill">
+                            <input type="text" matInput placeholder="Phone Number" formControlName="phoneNo">
+                            <mat-error *ngIf="phoneNo.hasError('required')">
+                                Phone Number is required
+                            </mat-error>
+                            <mat-error *ngIf="phoneNo?.hasError('invalidPhone') && !phoneNo.hasError('required')">
+                                Valid phone number contains 10 digits starting with 7/8/9
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row" formGroupName="address">
+                    <label for="address">Address</label>
+                    <div class="row1">
+                        <mat-form-field class="full-width" appearance="fill">
+                            <input  matInput placeholder="Street" formControlName="street">
+                            <mat-error *ngIf="street.hasError('required')">
+                                Street name is required
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="row">
+                        <div class="col1">
+                            <mat-form-field class="full-width" appearance="fill">
+                                <input matInput placeholder="City" formControlName="city">
+                                <mat-error *ngIf="city.hasError('required')">
+                                    City name is required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col1">
+                            <mat-form-field class="full-width" appearance="fill">
+                                <input matInput placeholder="State" formControlName="state">
+                                <mat-error *ngIf="state.hasError('required')">
+                                    State name is required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row1">
+                        <mat-form-field class="full-width" appearance="fill">
+                            <input type="number" matInput placeholder="Zip Code" formControlName="zipCode">
+                            <mat-error *ngIf="zipCode?.hasError('required')">
+                                Zip Code is required
+                            </mat-error>
+                            <mat-error *ngIf="zipCode?.hasError('invalidZip') && !zipCode?.hasError('required')">
+                                Zip Code should be 5 digit number
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </mat-card-content>
+            <mat-card-actions>
+                <button  mat-raised-button color="accent" type="reset">Reset</button>
+
+                <button  [disabled]="registrationForm.invalid" mat-raised-button color="primary"
+                    type="submit">Submit</button>
+            </mat-card-actions>
+            <!-- {{registrationForm.invalid} -->
+        </mat-card>
+    </form>
+</div>

@@ -1,0 +1,19 @@
+a{
+    text-decoration: none;
+    font-weight: 800;
+}
+form{
+    width: 600px;
+    border-radius: 20px;
+    background-color: aliceblue;
+    box-shadow: 1px 5px 10px 2px gray;
+
+}
+#btn{
+    background-color: rgb(79, 79, 79);
+    color: white;
+}
+#container{
+    text-align: center;
+    margin-top: 5%;
+}

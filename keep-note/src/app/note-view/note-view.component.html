@@ -1,0 +1,16 @@
+<app-search (searchTextChanged)="onSearchTextChanged($event)"></app-search>
+<div id="noteContainer">
+    <app-note *ngFor="let note of notes" [note]="note"></app-note>
+</div>
+
+<div>
+    <button mat-icon-button id="addNote" mat-raised-button (click)="openAddInterface()">
+        <mat-icon fontIcon="add_circle" color="primary"></mat-icon>
+    </button>
+</div>
+
+<div id="saveNote">
+    <ng-template [ngIf]="flag">
+        <app-add-note (saveNote)="pushNote($event)"></app-add-note>
+    </ng-template>
+</div>

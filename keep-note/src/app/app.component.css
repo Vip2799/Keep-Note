@@ -1,0 +1,10 @@
+body{
+    background-color: rgb(249, 254, 243);
+}
+#middle{
+    border: 2px solid;
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 20%;
+    height: 30px;
+}

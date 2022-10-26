@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": 1
+    },
+    {
+      "firstName": "Vipul",
+      "lastName": "Navale",
+      "email": "vipulnavale9@gmail.com",
+      "password": "Vipul@123",
+      "confirmPassword": "Vipul@123",
+      "gender": "Male",
+      "age": 23,
+      "phoneNo": "7719864450",
+      "address": {
+        "street": "Utkarsha Banglow, dattanagar, wai, dist.-satara",
+        "city": "satara",
+        "state": "maharashtra",
+        "zipCode": 415002
+      },
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+<div id="searchBox">
+    <mat-form-field id="searchInput">
+        <input (input)="search()" placeholder="Search" matInput type="text"  [(ngModel)]="searchText">
+        <button mat-icon-button matSuffix >
+            <mat-icon fontIcon="search"></mat-icon>
+        </button>
+    </mat-form-field>
+</div>

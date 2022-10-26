@@ -1,0 +1,24 @@
+h2{
+    color: white;
+    padding: 15px;
+}
+a{
+    text-decoration: none;
+}
+header{
+    display: flex;
+    background-color: navy;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+    /* border: 2px solid; */
+}
+#icon button{
+    background-color: navy;
+    color: white;
+
+}
+#icon{
+    margin-right: 15px;
+}

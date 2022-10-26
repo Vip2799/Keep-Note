@@ -1,0 +1,15 @@
+#noteContainer{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: start;
+    /* border: 2px solid; */
+}
+#addNote{
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    /* font-size: 50px; */
+}
+#saveNote{
+    padding-left: 35%; 
+}

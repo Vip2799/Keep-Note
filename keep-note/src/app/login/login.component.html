@@ -1,0 +1,20 @@
+<!-- <app-header></app-header> -->
+<div class="d-flex justify-content-center" id="container" >
+    <form action="#" [formGroup]="loginForm" (ngSubmit)="login()" class="p-4 px-4 form-control">
+    <mat-form-field class="form-control-plaintext my-2" appearance="fill">
+        <mat-label>Email Id</mat-label>
+        <input matInput placeholder="Enter your registered email address here.." formControlName="emailId">
+    </mat-form-field>
+    <mat-form-field class="form-control-plaintext" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput placeholder="Password" formControlName="password">
+        <!-- <mat-error *ngIf="true">
+            Entered wrong password/email Id ... :(
+                Try Again!!
+        </mat-error> -->
+    </mat-form-field>
+    <input type="submit" name="Login" class="form-control my-2 btn" id="btn" mat-raised-button>
+    <small >new user?? <a routerLink="/registrationForm">register</a></small>
+
+</form>
+</div>
